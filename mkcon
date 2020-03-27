@@ -1,0 +1,16 @@
+#!/bin/bash
+
+path=~/Desktop/Kachda/cf_practise/$1
+
+if mkdir $path
+then
+	echo folder created : $path
+	a=(a b c d e f g h i j k l m n o p q r s t u v s t y z)
+	for ((i=0;i<$2;i++))
+	do
+		file=$path/${a[$i]}.cpp
+		touch $file
+		echo file created : $file
+	done
+	#subl $path #uncomment this line to open files through sublime text
+fi
