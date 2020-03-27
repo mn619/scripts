@@ -1,6 +1,7 @@
 #!/bin/bash
 
-path=~/Desktop/Kachda/cf_practise/$1
+path=~/Desktop/Kachda/cf_practise
+path=$path/$1
 
 if mkdir $path
 then
