@@ -6,12 +6,10 @@ path=$path/$1
 if mkdir $path
 then
 	echo folder created : $path
-	a=(a b c d e f g h i j k l m n o p q r s t u v s t y z)
-	for ((i=0;i<$2;i++))
+	arr=(a b c d e f g h i j k l m n o p q r s t u v s t y z)
+	for file in ${arr[@]:0:$2}
 	do
-		file=$path/${a[$i]}.cpp
-		touch $file
-		echo file created : $file
+		touch $path/$file
 	done
 	#subl $path #uncomment this line to open files through sublime text
 fi
