@@ -3,13 +3,14 @@
 path=~/Desktop/Kachda/cf_practise
 path=$path/$1
 
-if mkdir $path
+echo $path
+if mkdir "$path"
 then
 	echo folder created : $path
 	arr=(a b c d e f g h i j k l m n o p q r s t u v s t y z)
 	for file in ${arr[@]:0:$2}
 	do
-		touch $path/$file.cpp
+		touch "$path"/$file.cpp
 	done
-	#subl $path #uncomment this line to open files through sublime text
+	#subl "$path" #uncomment this line to open files through sublime text
 fi
