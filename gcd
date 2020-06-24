@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ "$#" -eq 0 ]
+then
+	echo "usage : gcd <numbers>"
+	exit 0
+fi
+
+args=( "$@" )
+ans=0
+
+function gcd()
+{
+	a=$1
+	b=$2
+
+	while [ $a -ne 0 ]
+	do
+		t=$a
+		a=$(( ${b} % ${a} ))
+		b=$t
+	done
+	ans=$b
+}
+
+for(( i=0; i<${#}; i++ ))
+{
+	gcd ${ans} ${args[${i}]}
+}
+
+echo gcd\( $@ \) : $ans
